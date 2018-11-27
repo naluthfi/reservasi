@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('test/adminlte', function () {
+    return view('template.adminlte.test');
+});
