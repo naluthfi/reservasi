@@ -41,6 +41,22 @@ class ReservationController
 
     public function showFormConfirm(Request $request): View
     {
+        $items = Items::find($request->items);
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'institution' => $request->institution,
+            'start_time' => $request->start_time,
+            'end_time' => $request->end_time,
+            'items' => $items,
+            'quantities' => $request->quantity,
+            'type' => $request->type,
+        ];
+        return view('guest.reservation.formConfirm', $data);
+    }
+
+    public function reserve(Request $request): View
+    {
         dd($request->all());
     }
 }
