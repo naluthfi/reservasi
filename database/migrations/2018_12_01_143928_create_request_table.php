@@ -19,8 +19,9 @@ class CreateRequestTable extends Migration
             $table->dateTime('end_time');
             $table->string('status');
             $table->string('name');
-            $table->string('organization');
+            $table->string('institution');
             $table->string('email');
+            $table->timestamps();
         });
     }
 

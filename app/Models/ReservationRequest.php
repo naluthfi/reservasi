@@ -12,4 +12,9 @@ class ReservationRequest extends Model
     public $timestamps = true;
     protected $table = 'request';
     protected $primaryKey = 'id';
+
+    public function items()
+    {
+        return $this->belongsToMany(Items::class, 'request_items', 'request_id', 'item_id');
+    }
 }
