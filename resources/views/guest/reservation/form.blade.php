@@ -1,6 +1,6 @@
 @extends('template.adminlte.app')
 
-@section('title', 'Dashboard')
+@section('title', 'Form peminjaman')
 
 @section('menu')
     @include('guest.menu')
@@ -14,7 +14,7 @@
     <section class="content-header">
         <h1>
             Peminjaman
-            {{--<small>Yang ini subjudul</small>--}}
+            <small>Isi data peminjam</small>
         </h1>
     </section>
     <section class="content">
@@ -53,7 +53,7 @@
                                         required
                                         style="width: 100%;" name="items[]">
                                     @foreach($items as $item)
-                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        <option value="{{ "$item->id" }}">{{ $item->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -82,14 +82,14 @@
 @section('script')
     <script src="{{ asset('adminlte/bower_components/select2/dist/js/select2.full.min.js') }}"></script>
     <script type="text/javascript">
-        $('.select2').select2()
+        $('.select2').select2();
         $('#reservationtime').daterangepicker({
             timePicker: true,
             timePickerIncrement: 30,
             startDate: moment(),
             endDate: moment().add(30, 'minute'),
             locale: {
-                format: 'DD/MM/YYYY HH:mm A'
+                format: 'DD/MM/YYYY HH:mm'
             }
         })
     </script>

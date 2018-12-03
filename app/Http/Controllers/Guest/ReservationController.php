@@ -22,6 +22,25 @@ class ReservationController
 
     public function showFormAmount(Request $request): View
     {
+        $times = explode(' - ', $request->reservation_time);
+        $items = Items::find($request->items);
+        $hiddenInputs = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'institution' => $request->institution,
+            'start_time' => $times[0],
+            'end_time' => $times[1],
+        ];
+        $data = [
+            'hiddenInputs' => $hiddenInputs,
+            'items' => $items,
+            'type' => $request->type,
+        ];
+        return view('guest.reservation.formAmount', $data);
+    }
+
+    public function showFormConfirm(Request $request): View
+    {
         dd($request->all());
     }
 }
