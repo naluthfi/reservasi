@@ -50,9 +50,10 @@
                                     <label>Kelas yang akan dipinjam</label>
                                 @endif
                                 <select class="form-control select2" multiple="multiple" data-placeholder="Pilihan"
+                                        required
                                         style="width: 100%;" name="items[]">
-                                    @foreach([1, 2, 3, 4] as $item)
-                                        <option value="{{ $item }}">Item {{ $item }}</option>
+                                    @foreach($items as $item)
+                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
