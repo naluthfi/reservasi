@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Guest\DashboardController@index')->name('guest.dashboard.index');
 
 Route::get('test/adminlte', function () {
     return view('template.adminlte.test');
