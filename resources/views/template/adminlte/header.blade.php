@@ -14,6 +14,7 @@
 
     <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
+        @auth
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -26,8 +27,7 @@
                     <li class="user-header">
                         <img src={{asset('img/admin-logo.png')}} class="img-circle" alt="User Image">
                         <p>
-{{--                            {{ $auth::user()->name }}--}}
-                            Nama
+                            {{ $auth::user()->name }}
                         </p>
                     </li>
                     <!-- Menu Footer-->
@@ -38,6 +38,7 @@
                     </li>
                 </ul>
             </li>
+            @endauth
         </ul>
     </div>
 </nav>
