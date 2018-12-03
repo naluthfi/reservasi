@@ -14,6 +14,7 @@
 Route::get('/', 'Guest\DashboardController@index')->name('guest.dashboard.index');
 
 Route::get('/reservation/{type}/form', 'Guest\ReservationController@showForm')->name('guest.reservation.form');
+Route::post('/reservation/{type}/amount', 'Guest\ReservationController@showFormAmount')->name('guest.reservation.formAmount');
 
 Route::get('test/adminlte', function () {
     return view('template.adminlte.test');

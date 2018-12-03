@@ -11,8 +11,13 @@ class ReservationController
     public function showForm(Request $request): View
     {
         $data = [
-            'type' => $request->get('type')
+            'type' => $request->type
         ];
         return view('guest.reservation.form', $data);
+    }
+
+    public function showFormAmount(Request $request): View
+    {
+        dd($request->all());
     }
 }
