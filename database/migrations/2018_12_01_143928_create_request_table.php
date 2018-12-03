@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateRequestTable extends Migration
 {
@@ -20,6 +20,7 @@ class CreateRequestTable extends Migration
             $table->string('status');
             $table->string('name');
             $table->string('organization');
+            $table->string('email');
         });
     }
 
