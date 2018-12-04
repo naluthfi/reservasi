@@ -22,6 +22,10 @@ Route::get('auth/login', 'Auth\LoginController@showLoginForm')->name('auth.login
 Route::post('auth/login', 'Auth\LoginController@login')->name('auth.login');
 Route::get('auth/logout', 'Auth\LoginController@logout')->name('auth.logout');
 
+Route::prefix('admin')->group(function () {
+    Route::get('index', 'Admin\DashboardController@index')->name('admin.dashboard.index');
+});
+
 Route::get('test/adminlte', function () {
     return view('template.adminlte.test');
 });

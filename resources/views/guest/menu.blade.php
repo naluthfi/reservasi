@@ -1,3 +1,10 @@
+@auth
+    <li>
+        <a href="{{ route('admin.dashboard.index') }}">
+            <i class="fa fa-home"></i> <span>Halaman admin</span>
+        </a>
+    </li>
+@endauth
 <li>
     <a href="{{ route('guest.dashboard.index') }}">
         <i class="fa fa-home"></i> <span>Beranda</span>
