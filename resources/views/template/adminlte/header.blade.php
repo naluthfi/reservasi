@@ -1,5 +1,5 @@
 <!-- Logo -->
-<a href="#" class="logo">
+<a href="{{ route('guest.dashboard.index') }}" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>R</b>MB</span>
     <!-- logo for regular state and mobile devices -->
@@ -14,6 +14,9 @@
 
     <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
+            <li>
+                <a href="{{ route('auth.login') }}">Login</a>
+            </li>
         @auth
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
