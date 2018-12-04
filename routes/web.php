@@ -19,6 +19,7 @@ Route::post('/reservation/{type}/confirm', 'Guest\ReservationController@showForm
 Route::post('/reservation/{type}/reserve', 'Guest\ReservationController@reserve')->name('guest.reservation.reserve');
 
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('auth.login');
+Route::post('/login', 'Auth\LoginController@login')->name('auth.login');
 
 Route::get('test/adminlte', function () {
     return view('template.adminlte.test');

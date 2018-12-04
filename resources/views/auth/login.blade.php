@@ -35,7 +35,7 @@
     <div class="login-box-body">
         <p class="login-box-msg">Sign in sebagai admin</p>
 
-        <form action="../../index2.html" method="post">
+        <form action="{{ route('auth.login') }}" method="post">
             {{ csrf_field() }}
             <div class="form-group has-feedback">
                 <input type="email" class="form-control" placeholder="Email" name="email">

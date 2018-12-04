@@ -14,33 +14,34 @@
 
     <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-            <li>
-                <a href="{{ route('auth.login') }}">Login</a>
-            </li>
-        @auth
+            @guest
+                <li>
+                    <a href="{{ route('auth.login') }}">Login</a>
+                </li>
+            @endguest
+            @auth
             <!-- User Account: style can be found in dropdown.less -->
-            <li class="dropdown user user-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src={{asset('img/admin-logo.png')}} class="user-image" alt="User Image"/>
-                    {{--<span class="hidden-xs">{{ $auth::user()->name }}</span>--}}
-                    <span class="hidden-xs">Nama</span>
-                </a>
-                <ul class="dropdown-menu">
-                    <!-- User image -->
-                    <li class="user-header">
-                        <img src={{asset('img/admin-logo.png')}} class="img-circle" alt="User Image">
-                        <p>
-                            {{ $auth::user()->name }}
-                        </p>
-                    </li>
-                    <!-- Menu Footer-->
-                    <li class="user-footer">
-                        <div class="pull-right">
-                            <a href="{{ "#" }}" class="btn btn-default btn-flat">Sign out</a>
-                        </div>
-                    </li>
-                </ul>
-            </li>
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src={{asset('img/admin-logo.png')}} class="user-image" alt="User Image"/>
+                        <span class="hidden-xs">{{ $auth::user()->name }}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header">
+                            <img src={{asset('img/admin-logo.png')}} class="img-circle" alt="User Image">
+                            <p>
+                                {{ $auth::user()->name }}
+                            </p>
+                        </li>
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <div class="pull-right">
+                                <a href="{{ "#" }}" class="btn btn-default btn-flat">Sign out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
             @endauth
         </ul>
     </div>
