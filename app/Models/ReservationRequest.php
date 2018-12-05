@@ -15,6 +15,6 @@ class ReservationRequest extends Model
 
     public function items()
     {
-        return $this->belongsToMany(Items::class, 'request_items', 'request_id', 'item_id');
+        return $this->belongsToMany(Items::class, 'request_items', 'request_id', 'item_id')->withPivot('quantity');
     }
 }
