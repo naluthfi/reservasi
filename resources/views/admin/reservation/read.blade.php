@@ -32,7 +32,7 @@
                             <table id="data-reservasi" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th>No</th>
+                                    <th>Nomor reservasi</th>
                                     <th>Nama peminjam</th>
                                     <th>Organisasi</th>
                                     <th>Email</th>
