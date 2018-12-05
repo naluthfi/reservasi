@@ -55,7 +55,7 @@
                                         @endif
                                         <td>{{ $request->status }}</td>
                                         <td>
-                                            <a href="#">
+                                            <a href="{{ route('admin.reservation.detail', ['id' => $request->id]) }}">
                                                 <button type="button" class="btn btn-block btn-info">Detail</button>
                                             </a>
                                         </td>

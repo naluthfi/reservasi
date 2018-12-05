@@ -25,6 +25,8 @@ Route::get('auth/logout', 'Auth\LoginController@logout')->name('auth.logout');
 Route::prefix('admin')->group(function () {
     Route::get('index', 'Admin\DashboardController@index')->name('admin.dashboard.index');
     Route::get('reservation', 'Admin\ReservationController@read')->name('admin.reservation.read');
+    Route::get('reservation/{id}', 'Admin\ReservationController@detail')->name('admin.reservation.detail');
+    Route::post('reservation/{id}/action', 'Admin\ReservationController@action')->name('admin.reservation.action');
 });
 
 Route::get('test/adminlte', function () {
