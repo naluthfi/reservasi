@@ -8,10 +8,27 @@
 
 @section('content')
     <section class="content-header">
-        <h1>
-            Ini dashboard
-            <small>Yang ini subjudul</small>
-        </h1>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div style="margin-bottom:3px;
+                        background:#fff;
+                        border-radius:10px;
+                        padding:10px;
+                        border-left:12px solid #eee;
+                        border-top:12px solid #eee;
+                        border-right:12px solid #eee;
+                        border-bottom:12px solid #eee;">
+                        <div class="products text-center">
+                            <h3>Selamat Datang di Laman Reservasi Departemen Manajemen Bisnis ITS</h3>
+                            <div>
+                                Website ini merupakan platform untuk melakukan pengajuan peminjaman barang dan ruangan yang dimiliki oleh Departemen Manajemen Bisnis ITS.
+                            </div>
+                        </div>    
+                    </div>                        
+                </div>
+            </div>
+        </div>
     </section>
     <section class="content">
         @if(!empty($message))
@@ -21,27 +38,36 @@
                 {{ $message }}
             </div>
         @endif
-            <div class="container" style="width:80%">
-                <div class="row" style="padding:0.5rem;">
-                    <ul class="collapsible expendable popout">
-                        <div class="wrapper bordered">
-                            <div class="container content">
-                                <div class="products text-center">
-                                    <h3>Selamat Datang di Laman Reservasi Departemen Manajemen Bisnis ITS</h3>
-                                    <div>
-                                        Website ini berisi informasi dan pengajuan peminjaman barang dan ruangan yang dimiliki oleh Departemen Manajemen Bisnis ITS.
-                                    </div>
-                                </div>
-                            </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-5">
+                    <div style="margin-bottom:30px;
+                       background:#fff;
+                       border-radius:10px;
+                       padding:10px;
+                       border-left:1px solid #eee;
+                       border-top:1px solid #eee;
+                       border-right:2px solid #eee;
+                       border-bottom:2px solid #eee;">
+                       <div style="min-height: 40px;
+                           font-size: 16px;
+                           background:#f5f5f5;
+                           border-top-left-radius:5px;
+                           border-top-right-radius:5px;
+                           padding:10px;
+                           border-left:0px solid #eee;
+                           border-top:0px solid #eee;
+                           border-right:2px solid #eee;">
+                            <div class="panel-title"><strong>Ketentuan Peminjaman</strong></div>
                         </div>
-                        <li class="active">
-                            <div class="collapsible-header"><strong>Ketentuan Peminjaman</strong></div>
                             <div class="collapsible-body">
                                 <ol>
-                                    <li>Peminjaman barang dan atau ruangan diawali dengan mengisi formulir yang terdapat pada website ini.</li>
-                                    <li>Persetujuan reservasi oleh Kepala Departemen berkoordinasi dengan <strong>Penanggung Jawab Ruangan atau Barang</strong> didasarkan atas skala prioritas dan potensi gangguan (keamanan, kebisingan) dengan kegiatan waktu yang sama.</li>
+                                    <li>Setiap peminjaman barang dan atau ruangan diharuskan mengisi formulir yang tersedia pada laman website ini.</li>
+                                    <li>Persetujuan reservasi oleh Kepala Departemen berkoordinasi dengan Penanggung Jawab Ruangan atau Barang didasarkan atas skala prioritas dan potensi gangguan (keamanan, kebisingan) dengan kegiatan dalam waktu yang sama.</li>
                                     <li>
-                                        Setelah semua proses peminjaman ruangan disetujui, peminjam menghubungi <strong>Penanggung Jawab Ruangan atau Barang</strong> untuk mendapatkan kunci:
+                                        Setelah semua proses peminjaman ruangan disetujui, peminjam menghubungi Penanggung Jawab Ruangan atau Barang untuk mendapatkan kunci:
                                         <strong>
                                             <ul>
                                                 <li>Ruang Kelas - Eko Cahyono</li>
@@ -53,10 +79,29 @@
                                     </li>
                                 </ol>
                             </div>
-                        </li>
-                        <br>
-                        <li>
-                            <div class="collapsible-header"><strong>Tata Tertib</strong></div>
+                    </div>
+                </div>
+
+                        <div class="col-md-7">
+                    <div style="margin-bottom:30px;
+                       background:#fff;
+                       border-radius:10px;
+                       padding:10px;
+                       border-left:1px solid #eee;
+                       border-top:1px solid #eee;
+                       border-right:2px solid #eee;
+                       border-bottom:2px solid #eee;">
+                        <div style="min-height: 40px;
+                           font-size: 16px;
+                           background:#f5f5f5;
+                           border-top-left-radius:5px;
+                           border-top-right-radius:5px;
+                           padding:10px;
+                           border-left:0px solid #eee;
+                           border-top:0px solid #eee;
+                           border-right:0px solid #eee;">
+                            <div class="panel-title"><strong>Tata Tertib</strong></div>
+                        </div>
                             <div class="collapsible-body">
                                 <ol>
                                     <li>Pengajuan peminjaman ruangan maksimal 2 minggu sebelum pelaksanaan kegiatan.</li>
@@ -74,9 +119,10 @@
                                     </li>
                                 </ol>
                             </div>
-                        </li>
-                    </ul>
+                    </div>
+                    </div>
                 </div>
             </div>
+        </div>
     </section>
 @endsection
