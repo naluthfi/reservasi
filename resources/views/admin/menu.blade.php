@@ -4,6 +4,11 @@
     </a>
 </li>
 <li>
+    <a href="{{ route('admin.item.create') }}">
+        <i class="fa fa-home"></i> <span>Input data item baru</span>
+    </a>
+</li>
+<li>
     <a href="{{ route('admin.reservation.read', ['all' => true]) }}">
         <i class="fa fa-calendar-o"></i> <span>Daftar semua peminjaman</span>
     </a>
