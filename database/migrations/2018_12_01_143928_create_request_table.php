@@ -21,6 +21,7 @@ class CreateRequestTable extends Migration
             $table->string('name');
             $table->string('institution');
             $table->string('email');
+            $table->string('type');
             $table->timestamps();
         });
     }

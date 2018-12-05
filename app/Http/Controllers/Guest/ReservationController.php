@@ -67,6 +67,7 @@ class ReservationController
         $reservationRequest->setAttribute('start_time', new Carbon($request->start_time));
         $reservationRequest->setAttribute('end_time', new Carbon($request->end_time));
         $reservationRequest->setAttribute('status', ReservationRequest::STATUS_PENDING);
+        $reservationRequest->setAttribute('type', $request->type);
         $reservationRequest->save();
 
         $attachments = [];

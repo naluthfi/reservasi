@@ -36,19 +36,29 @@
                                     <th>Nama peminjam</th>
                                     <th>Organisasi</th>
                                     <th>Email</th>
+                                    <th>Jenis</th>
                                     <th>Status</th>
                                     <th>Detail</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach([1,2,3,4,5,6,7,8,9,10] as $data)
+                                @foreach($requests as $request)
                                     <tr>
-                                        <td>{{ $data }}</td>
-                                        <td>{{ $data + 3 }}</td>
-                                        <td>{{ $data + 4 }}</td>
-                                        <td>{{ $data + 7 }}</td>
-                                        <td>{{ $data + 9 }}</td>
-                                        <td>{{ $data + 11 }}</td>
+                                        <td>{{ $request->id }}</td>
+                                        <td>{{ $request->name }}</td>
+                                        <td>{{ $request->institution }}</td>
+                                        <td>{{ $request->email }}</td>
+                                        @if($request->type == 'item')
+                                            <td>Barang</td>
+                                        @elseif($request->type == 'class')
+                                            <td>Kelas</td>
+                                        @endif
+                                        <td>{{ $request->status }}</td>
+                                        <td>
+                                            <a href="#">
+                                                <button type="button" class="btn btn-block btn-info">Detail</button>
+                                            </a>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -58,6 +68,7 @@
                                     <th>Nama peminjam</th>
                                     <th>Organisasi</th>
                                     <th>Email</th>
+                                    <th>Jenis</th>
                                     <th>Status</th>
                                     <th>Detail</th>
                                 </tr>
