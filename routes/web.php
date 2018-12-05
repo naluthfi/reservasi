@@ -29,6 +29,7 @@ Route::prefix('admin')->group(function () {
     Route::post('reservation/{id}/action', 'Admin\ReservationController@action')->name('admin.reservation.action');
 
     Route::get('item/create', 'Admin\ItemController@create')->name('admin.item.create');
+    Route::post('item/create', 'Admin\ItemController@store')->name('admin.item.store');
 });
 
 Route::get('test/adminlte', function () {

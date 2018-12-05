@@ -5,7 +5,7 @@
 </li>
 <li>
     <a href="{{ route('admin.item.create') }}">
-        <i class="fa fa-home"></i> <span>Input data item baru</span>
+        <i class="fa fa-plus"></i> <span>Input data item baru</span>
     </a>
 </li>
 <li>
