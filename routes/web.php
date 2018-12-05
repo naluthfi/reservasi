@@ -30,6 +30,7 @@ Route::prefix('admin')->group(function () {
 
     Route::get('item/create', 'Admin\ItemController@create')->name('admin.item.create');
     Route::post('item/create', 'Admin\ItemController@store')->name('admin.item.store');
+    Route::get('item/read', 'Admin\ItemController@read')->name('admin.item.read');
 });
 
 Route::get('test/adminlte', function () {

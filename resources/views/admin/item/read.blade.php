@@ -1,6 +1,6 @@
 @extends('template.adminlte.app')
 
-@section('title', 'Daftar peminjaman')
+@section('title', 'Dashboard')
 
 @section('menu')
     @include('admin.menu')
@@ -9,7 +9,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Daftar peminjaman
+            Daftar Item
         </h1>
     </section>
     <section class="content">
@@ -29,48 +29,45 @@
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                            <table id="data-reservasi" class="table table-bordered table-striped">
+                            <table id="data-item" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th>Nomor reservasi</th>
-                                    <th>Nama peminjam</th>
-                                    <th>Organisasi</th>
-                                    <th>Email</th>
-                                    <th>Jenis</th>
-                                    <th>Status</th>
-                                    <th>Detail</th>
+                                    <th>Id</th>
+                                    <th>Nama</th>
+                                    <th>Deskripsi</th>
+                                    <th>Jumlah</th>
+                                    <th>Jenis item</th>
+                                    {{--<th>Pilihan</th>--}}
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($requests as $request)
+                                @foreach($items as $item)
                                     <tr>
-                                        <td>{{ $request->id }}</td>
-                                        <td>{{ $request->name }}</td>
-                                        <td>{{ $request->institution }}</td>
-                                        <td>{{ $request->email }}</td>
-                                        @if($request->type == 'item')
+                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->description }}</td>
+                                        <td>{{ $item->quantity }}</td>
+                                        @if($item->type == 'item')
                                             <td>Barang</td>
-                                        @elseif($request->type == 'class')
+                                        @elseif($item->type == 'class')
                                             <td>Kelas</td>
                                         @endif
-                                        <td>{{ $request->status }}</td>
-                                        <td>
-                                            <a href="{{ route('admin.reservation.detail', ['id' => $request->id]) }}">
-                                                <button type="button" class="btn btn-block btn-info">Detail</button>
-                                            </a>
-                                        </td>
+                                        {{--<td>--}}
+                                            {{--<a href="{{ route('admin.reservation.detail', ['id' => $item->id]) }}">--}}
+                                                {{--<button type="button" class="btn btn-block btn-info">Detail</button>--}}
+                                            {{--</a>--}}
+                                        {{--</td>--}}
                                     </tr>
                                 @endforeach
                                 </tbody>
                                 <tfoot>
                                 <tr>
-                                    <th>No</th>
-                                    <th>Nama peminjam</th>
-                                    <th>Organisasi</th>
-                                    <th>Email</th>
-                                    <th>Jenis</th>
-                                    <th>Status</th>
-                                    <th>Detail</th>
+                                    <th>Id</th>
+                                    <th>Nama</th>
+                                    <th>Deskripsi</th>
+                                    <th>Jumlah</th>
+                                    <th>Jenis item</th>
+                                    {{--<th>Pilihan</th>--}}
                                 </tr>
                                 </tfoot>
                             </table>
@@ -85,7 +82,7 @@
 @section('script')
     <script type="text/javascript">
         $(function () {
-            $('#data-reservasi').DataTable()
+            $('#data-item').DataTable()
         });
     </script>
 @endsection

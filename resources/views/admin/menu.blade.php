@@ -1,6 +1,6 @@
 <li>
     <a href="{{ route('admin.dashboard.index') }}">
-        <i class="fa fa-home"></i> <span>Beranda</span>
+        <i class="fa fa-home"></i> <span>Dashboard admin</span>
     </a>
 </li>
 <li>
@@ -9,13 +9,18 @@
     </a>
 </li>
 <li>
-    <a href="{{ route('admin.reservation.read', ['all' => true]) }}">
-        <i class="fa fa-calendar-o"></i> <span>Daftar semua peminjaman</span>
+    <a href="{{ route('admin.item.read') }}">
+        <i class="fa fa-list"></i> <span>Daftar Item</span>
     </a>
 </li>
+{{--<li>--}}
+{{--<a href="{{ route('admin.reservation.read', ['all' => true]) }}">--}}
+{{--<i class="fa fa-calendar-o"></i> <span>Daftar semua peminjaman</span>--}}
+{{--</a>--}}
+{{--</li>--}}
 <li>
     <a href="{{ route('admin.reservation.read', ['status' => 'pending']) }}">
-        <i class="fa fa-calendar-o"></i> <span>Daftar peminjaman baru</span>
+        <i class="fa fa-calendar-o"></i> <span>Daftar peminjaman menunggu</span>
     </a>
 </li>
 <li>

@@ -22,4 +22,13 @@ class ItemController
         $item->save();
         return redirect(route('admin.item.create'))->with('status', "Data $item->name berhasil disimpan");
     }
+
+    public function read(Request $request)
+    {
+        $items = Items::all();
+        $data = [
+            'items' => $items
+        ];
+        return view('admin.item.read', $data);
+    }
 }
