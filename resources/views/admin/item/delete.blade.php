@@ -1,6 +1,6 @@
 @extends('template.adminlte.app')
 
-@section('title', 'Edit item')
+@section('title', 'Hapus item')
 
 @section('menu')
     @include('admin.menu')
@@ -9,8 +9,8 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Ubah data item
-            <small>Masukan data baru</small>
+            Hapus data item
+            {{--<small>Masukan data baru</small>--}}
         </h1>
     </section>
     <section class="content">
@@ -18,32 +18,31 @@
             <div class="col-sm-12">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Form ubah data item</h3>
+                        <h3 class="box-title">Form data item baru</h3>
                     </div>
-                    <form method="POST" action="{{ route('admin.item.update', ['id' => $item->id]) }}">
+                    <form method="POST" action="{{ route('admin.item.destroy', ['id' => $item->id]) }}">
                         {{ csrf_field() }}
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="name">Nama</label>
                                 <input type="text" class="form-control" id="name" placeholder="Masukan nama barang"
-                                       name="name" required value="{{ $item->name }}">
+                                       name="name" disabled value="{{ $item->name }}">
                             </div>
                             <div class="form-group">
                                 <label for="deskripsi">Deskripsi</label>
                                 <input type="text" class="form-control" id="deskripsi" placeholder="Deskripsi"
                                        name="description"
-                                       required value="{{ $item->description }}">
+                                       disabled value="{{ $item->description }}">
                             </div>
                             <div class="form-group">
                                 <label for="quantity">Jumlah item</label>
                                 <input type="number" class="form-control" id="quantity"
-                                       placeholder="Jumlah item" name="quantity" required value="{{ $item->quantity }}">
+                                       placeholder="Jumlah item" name="quantity" disabled value="{{ $item->quantity }}">
                             </div>
                             <div class="form-group">
                                 <label for="quantity">Jenis item</label>
                                 <select class="form-control" data-placeholder="Pilihan jenis item"
-                                        required name="type">
-                                    <option disabled>Pilih jenis item</option>
+                                        disabled name="type">
                                     <option value="item" {{ $item->type == 'item' ? 'selected':'' }} >Barang</option>
                                     <option value="class" {{ $item->type == 'class' ? 'selected':'' }} >Ruangan</option>
                                 </select>

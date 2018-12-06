@@ -33,6 +33,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('item/read', 'Admin\ItemController@read')->name('admin.item.read');
     Route::get('item/edit/{id}', 'Admin\ItemController@edit')->name('admin.item.edit');
     Route::post('item/edit/{id}', 'Admin\ItemController@update')->name('admin.item.update');
+    Route::get('item/delete/{id}', 'Admin\ItemController@delete')->name('admin.item.delete');
+    Route::post('item/delete/{id}', 'Admin\ItemController@destroy')->name('admin.item.destroy');
 });
 
 Route::get('test/adminlte', function () {

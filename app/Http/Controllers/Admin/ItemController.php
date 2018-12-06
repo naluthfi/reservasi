@@ -51,4 +51,20 @@ class ItemController
         $item->save();
         return back()->with('status', 'Update data sukses');
     }
+
+    public function delete($id, Request $request)
+    {
+        $item = Items::find($id);
+        $data = [
+            'item' => $item
+        ];
+        return view('admin.item.delete', $data);
+    }
+
+    public function destroy($id)
+    {
+        $item = Items::find($id);
+        $item->delete();
+        return redirect(route('admin.item.read'))->with('status', 'Data item berhasil dihapus');
+    }
 }

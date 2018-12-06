@@ -54,7 +54,10 @@
                                         @endif
                                         <td>
                                             <a href="{{ route('admin.item.edit', ['id' => $item->id]) }}">
-                                                <button type="button" class="btn btn-block btn-info">Edit</button>
+                                                <button type="button" class="btn btn-block btn-info">Ubah</button>
+                                            </a>
+                                            <a href="{{ route('admin.item.delete', ['id' => $item->id]) }}">
+                                                <button type="button" class="btn btn-block btn-danger">Hapus</button>
                                             </a>
                                         </td>
                                     </tr>
