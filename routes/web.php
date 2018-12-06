@@ -13,6 +13,7 @@
 
 Route::get('/', 'Guest\DashboardController@index')->name('guest.dashboard.index');
 
+Route::get('/reservation/status', 'Guest\ReservationController@readStatus')->name('guest.reservation.status');
 Route::get('/reservation/{type}/form', 'Guest\ReservationController@showForm')->name('guest.reservation.form');
 Route::post('/reservation/{type}/amount', 'Guest\ReservationController@showFormAmount')->name('guest.reservation.formAmount');
 Route::post('/reservation/{type}/confirm', 'Guest\ReservationController@showFormConfirm')->name('guest.reservation.formConfirm');

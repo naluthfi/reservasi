@@ -80,4 +80,13 @@ class ReservationController
         return redirect(route('guest.dashboard.index'))
             ->with('status', "Permohonan peminjaman berhasil dibuat dengan nomor peminjaman $reservationRequest->id");
     }
+
+    public function readStatus()
+    {
+        $reservationRequest = ReservationRequest::all();
+        $data = [
+            'requests' => $reservationRequest
+        ];
+        return view('guest.reservation.status', $data);
+    }
 }

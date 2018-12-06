@@ -20,3 +20,8 @@
         <i class="fa fa-bank"></i> <span>Request peminjaman kelas</span>
     </a>
 </li>
+<li>
+    <a href="{{ route('guest.reservation.status') }}">
+        <i class="fa fa-home"></i> <span>Status peminjaman</span>
+    </a>
+</li>
