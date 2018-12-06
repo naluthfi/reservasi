@@ -37,7 +37,7 @@
                                     <th>Deskripsi</th>
                                     <th>Jumlah</th>
                                     <th>Jenis item</th>
-                                    {{--<th>Pilihan</th>--}}
+                                    <th>Pilihan</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -52,11 +52,11 @@
                                         @elseif($item->type == 'class')
                                             <td>Kelas</td>
                                         @endif
-                                        {{--<td>--}}
-                                            {{--<a href="{{ route('admin.reservation.detail', ['id' => $item->id]) }}">--}}
-                                                {{--<button type="button" class="btn btn-block btn-info">Detail</button>--}}
-                                            {{--</a>--}}
-                                        {{--</td>--}}
+                                        <td>
+                                            <a href="{{ route('admin.item.edit', ['id' => $item->id]) }}">
+                                                <button type="button" class="btn btn-block btn-info">Edit</button>
+                                            </a>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -67,7 +67,7 @@
                                     <th>Deskripsi</th>
                                     <th>Jumlah</th>
                                     <th>Jenis item</th>
-                                    {{--<th>Pilihan</th>--}}
+                                    <th>Pilihan</th>
                                 </tr>
                                 </tfoot>
                             </table>

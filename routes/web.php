@@ -22,7 +22,7 @@ Route::get('auth/login', 'Auth\LoginController@showLoginForm')->name('auth.login
 Route::post('auth/login', 'Auth\LoginController@login')->name('auth.login');
 Route::get('auth/logout', 'Auth\LoginController@logout')->name('auth.logout');
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('index', 'Admin\DashboardController@index')->name('admin.dashboard.index');
     Route::get('reservation', 'Admin\ReservationController@read')->name('admin.reservation.read');
     Route::get('reservation/{id}', 'Admin\ReservationController@detail')->name('admin.reservation.detail');
@@ -31,6 +31,8 @@ Route::prefix('admin')->group(function () {
     Route::get('item/create', 'Admin\ItemController@create')->name('admin.item.create');
     Route::post('item/create', 'Admin\ItemController@store')->name('admin.item.store');
     Route::get('item/read', 'Admin\ItemController@read')->name('admin.item.read');
+    Route::get('item/edit/{id}', 'Admin\ItemController@edit')->name('admin.item.edit');
+    Route::post('item/edit/{id}', 'Admin\ItemController@update')->name('admin.item.update');
 });
 
 Route::get('test/adminlte', function () {
