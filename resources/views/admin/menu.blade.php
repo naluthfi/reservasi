@@ -1,8 +1,8 @@
-<li>
-    <a href="{{ route('admin.dashboard.index') }}">
-        <i class="fa fa-home"></i> <span>Dashboard admin</span>
-    </a>
-</li>
+{{--<li>--}}
+{{--<a href="{{ route('admin.dashboard.index') }}">--}}
+{{--<i class="fa fa-home"></i> <span>Dashboard admin</span>--}}
+{{--</a>--}}
+{{--</li>--}}
 <li>
     <a href="{{ route('admin.item.create') }}">
         <i class="fa fa-plus"></i> <span>Input data item baru</span>
